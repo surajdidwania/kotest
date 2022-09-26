@@ -29,9 +29,7 @@ tasks.withType<Test>().configureEach {
 }
 
 tasks.withType<KotlinJvmTest>().configureEach {
-   outputs.cacheIf{
-      true
-   }
+   outputs.cacheIf { true }
 }
 
 tasks.withType<KotlinCompile>().configureEach {
