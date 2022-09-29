@@ -1,3 +1,4 @@
+import org.jetbrains.kotlin.gradle.targets.jvm.tasks.KotlinJvmTest
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
@@ -25,6 +26,10 @@ tasks.withType<Test>().configureEach {
    filter {
       isFailOnNoMatchingTests = false
    }
+}
+
+tasks.withType<KotlinJvmTest>().configureEach {
+   outputs.cacheIf { true }
 }
 
 tasks.withType<KotlinCompile>().configureEach {
